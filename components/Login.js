@@ -63,7 +63,7 @@ function Login({ setCurrForm }) {
           Sign in
         </Button>
         <p className="mt-8 text-center">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Anchor onClick={() => setCurrForm("signup")}>Sign Up</Anchor>
         </p>
       </Paper>

@@ -47,7 +47,7 @@ function Signup({ setCurrForm }) {
         const filteredArray = errorArray.filter((e) => e);
         console.log(filteredArray);
         if (filteredArray.length > 0) {
-          return filteredArray.map((e) => <p>{e}</p>);
+          return filteredArray.map((e, i) => <p key={i}>{e}</p>);
         } else {
           return null;
         }

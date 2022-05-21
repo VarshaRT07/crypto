@@ -10,7 +10,9 @@ function Crypto() {
     <div className="flex h-screen">
       <div className="flex-[0.25] max-w-xs bg-blue-300 flex flex-col gap-4 p-6">
         {cryptos.map((a) => (
-          <p className="p-4 leading-none rounded-md bg-black/5">{a}</p>
+          <p key={a} className="p-4 leading-none rounded-md bg-black/5">
+            {a}
+          </p>
         ))}
         <div className="mt-auto">
           <p className="cursor-pointer p-4 leading-5 mb-4 rounded-md bg-black/5">
