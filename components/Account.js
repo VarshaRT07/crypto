@@ -25,7 +25,7 @@ function Account() {
         <div className="flex flex-col gap-4">
           {data?.coins &&
             Object.entries(data.coins).map(([key, val]) => (
-              <p className="uppercase flex gap-2 items-center">
+              <p key={key} className="uppercase flex gap-2 items-center">
                 <span className="p-2 bg-gray-200 rounded-md">{key}</span>{" "}
                 <span>
                   <Numeral value={val} format={"0,0.0000"} />
