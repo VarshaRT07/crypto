@@ -12,9 +12,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 
 function Signup({ setCurrForm }) {
   const pwdREquirements = [
@@ -61,6 +62,12 @@ function Signup({ setCurrForm }) {
     setError("");
     setLoading(true);
     createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((user) => {
+        console.log(user);
+        return setDoc(doc(db, "users", user.user.uid), {
+          inr: 1000,
+        });
+      })
       .catch((e) => {
         console.log(e);
         setError(e.message);
